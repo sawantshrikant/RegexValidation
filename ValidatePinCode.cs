@@ -28,9 +28,21 @@ namespace RegexValidation
 
         public void ValidateEmail(string email)
         {
-            const string emailRegex = @"^[a-z]+[@][a-z]+[.][a-z]{2,3}([.][a-z]{2}){0,1}$";
+            Regex regex = new Regex("^[0-9a-zA-Z]+[.+-_]{0,1}[0-9a-zA-Z]+[@][a-zA-Z]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3}){0,1}");
 
-            Validate(email, emailRegex);
+            if (string.IsNullOrEmpty(email))
+            {
+                throw new ArgumentException("Email cannot be null or empty.");
+            }
+
+            if (regex.IsMatch(email))
+            {
+                Console.WriteLine("Email validation successful.");
+            }
+            else
+            {
+                Console.WriteLine("Email validation unsuccessful.");
+            }
         }
     }
 }
