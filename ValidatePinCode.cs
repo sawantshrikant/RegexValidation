@@ -28,9 +28,11 @@ namespace RegexValidation
 
         public void ValidateEmail(string email)
         {
-            const string emailRegex = @"^[a-z]+[@]{1}[a-z]$";
+            const string emailRegex = @"^[a-z]+[@][a-z]+([.][a-z]{2,3})$";
 
             Validate(email, emailRegex);
         }
     }
 }
+
+
