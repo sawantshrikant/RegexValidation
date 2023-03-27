@@ -1,4 +1,4 @@
-﻿
+﻿using System;
 using RegexValidation;
 
 internal class Program
@@ -9,12 +9,13 @@ internal class Program
         string pinCode = Console.ReadLine();
 
         ValidatePinCode validatePinCode = new ValidatePinCode();
-        validatePinCode.Validation(pinCode);
+        validatePinCode.Validate(pinCode, ValidatePinCode.PIN_CODE);
+
+        Console.WriteLine("Enter Email to validate:");
+        string email = Console.ReadLine();
+
+        validatePinCode.ValidateEmail(email);
+
+        Console.ReadKey();
     }
 }
-
-
-
-
-
-
