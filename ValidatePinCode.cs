@@ -7,7 +7,7 @@ namespace RegexValidation
     {
         public void Validation(string pincode)
         {
-            Regex regex = new Regex(@"^[0-9]{6}$");
+            Regex regex = new Regex(@"^(?=[^a-zA-Z])(?!.*[^0-9]).{6}$");
 
             if (string.IsNullOrEmpty(pincode))
             {
@@ -24,5 +24,4 @@ namespace RegexValidation
             }
         }
     }
-
 }
